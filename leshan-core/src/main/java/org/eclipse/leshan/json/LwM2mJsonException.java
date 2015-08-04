@@ -12,21 +12,23 @@
  * 
  * Contributors:
  *     Sierra Wireless - initial API and implementation
+ *     Gemalto M2M GmbH
  *******************************************************************************/
-package org.eclipse.leshan.server;
+package org.eclipse.leshan.json;
 
-public class Version {
-    public static String value;
+/**
+ * Exception thrown in case of JSON parsing error
+ */
+public class LwM2mJsonException extends Exception {
 
-    public final static String getValue() {
-        if (value == null) {
-            Package p = Version.class.getPackage();
-            String version = p.getImplementationVersion();
-            if (version != null)
-                value = version;
-            else
-                value = "unknown";
-        }
-        return value;
+    private static final long serialVersionUID = 1L;
+
+    public LwM2mJsonException(String message) {
+        super(message);
     }
+
+    public LwM2mJsonException(String message, Exception cause) {
+        super(message, cause);
+    }
+
 }

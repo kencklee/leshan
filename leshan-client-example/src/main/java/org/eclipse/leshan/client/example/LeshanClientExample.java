@@ -74,9 +74,9 @@ public class LeshanClientExample {
         ObjectsInitializer initializer = new ObjectsInitializer();
 
         initializer.setClassForObject(3, Device.class);
-        initializer.setInstanceForObject(6, locationInstance);
+        initializer.setInstancesForObject(6, locationInstance);
         List<ObjectEnabler> enablers = initializer.createMandatory();
-        enablers.addAll(initializer.create(6));
+        enablers.add(initializer.create(6));
 
         // Create client
         final InetSocketAddress clientAddress = new InetSocketAddress(localHostName, localPort);
